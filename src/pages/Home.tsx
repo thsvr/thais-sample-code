@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBug, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Pagination } from '../components/Pagination';
-/* eslint no-unused-vars: 0 */
+
 let PageSize = 10;
 
 const Container = styled.div`
