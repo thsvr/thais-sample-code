@@ -1,11 +1,12 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_COUNTRIES } from './graphql/queries';
+import { Home } from '../src/pages/Home';
 
 function App() {
-    const { loading, error, data } = useQuery(GET_COUNTRIES);
-    console.log('data', data, loading, error);
-    return <div className="App">test</div>;
+    return (
+        <div className="App">
+            <Home />
+        </div>
+    );
 }
 
 export default App;
