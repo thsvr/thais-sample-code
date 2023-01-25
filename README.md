@@ -18,9 +18,10 @@ Suggestion for a source code structure based on one of the common best practices
         ──index.ts
     ├──Another component
 |── context           // state managment
+|── graphql           // request and queries
 ├── hooks             // custom hooks
 ├── pages             // sreens, views
-|── styles            // styles
+|── styles            // global styles
 ├── types             // global types, interfaces
 ├── utils             // utility methods such as date, time, etc
 
