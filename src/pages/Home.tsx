@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { GET_COUNTRIES } from '../graphql/queries';
 import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBug, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Pagination } from '../components/Pagination';
-
+/* eslint no-unused-vars: 0 */
 let PageSize = 10;
 
 const Container = styled.div`
@@ -14,14 +16,14 @@ const Container = styled.div`
     border-radius: 16px;
 `;
 
-const HomeHeader = styled.h3`
-    color: lightgrey;
-`;
-
 const CountriesContainer = styled.div`
     padding: 1rem;
     margin-bottom: 30px;
     color: white;
+`;
+
+const HomeHeader = styled.h3`
+    color: lightgrey;
 `;
 
 const DataContainer = styled.div`
@@ -36,8 +38,8 @@ export const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const { loading, data, error } = useQuery(GET_COUNTRIES);
 
-    if (loading) return <div>loading</div>;
-    console.log(error);
+    if (loading) return <FontAwesomeIcon icon={faSpinner} spinPulse size="6x" />;
+    if (error) return <FontAwesomeIcon icon={faBug} pulse size="6x" />;
 
     const currentTableData = () => {
         const firstPageIndex = (currentPage - 1) * PageSize;
